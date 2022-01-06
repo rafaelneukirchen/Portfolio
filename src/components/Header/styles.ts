@@ -12,7 +12,7 @@ export const NavContainer = styled.nav<navProps>`
     margin: 0 auto;
     padding-top: 8px;
     position: ${(props) => props.fixed ? 'fixed' : 'initial'};
-    z-index: 1;
+    z-index: 2;
     > ul {
         z-index: 1;
         width: 100%;
