@@ -1,14 +1,18 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
+import Menu from '../pages/Menu';
+
 
 const Rotas = () => {
   return (
-    <Router>
+    <BrowserRouter>
         <Routes>
-            <Route path={'/'} element={<Home/>}/>
+          <Route path={'/menu'} element={<Menu/>}/>
+          <Route path={'/'} element={<Home/>}/>
+          <Route path={'/'} element={<Home/>}/>
+          <Route path={'/'} element={<Home/>}/>
         </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

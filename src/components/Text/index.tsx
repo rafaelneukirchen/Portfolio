@@ -5,7 +5,7 @@ interface TextProps{
     size: number;
     italic?: boolean;
     weight?: '500' | '600' | '700' | '900';
-    animation?: 'upper' | 'lower';
+    animation?: boolean;
 }
 
 const Text: React.FC<TextProps> = ({children, size, italic, animation}) => {

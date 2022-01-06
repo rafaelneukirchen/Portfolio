@@ -1,32 +1,24 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React from 'react';
 import Header from '../../components/Header';
 import PageWrapper from '../../components/PageWrapper';
-import Text from '../../components/Text';
-import { Background, Content } from './styles';
+import { Background, Title, Paragraph, Container, InternalTitle } from './styles';
 
 const Home: React.FC = () => {
-    const texts = useMemo(() => {
-        return ['The grow Continues.', 'Today we grow Stronger.', 'Be fruitful and multiply.'];
-    }, []);
-    const [growText, setGrowText] = useState(texts[Math.floor(Math.random() * 3)]);
-    const changeText = useCallback(() => {
-        setGrowText(texts[Math.floor(Math.random() * 3)]);
-    }, [texts])
-
-    useEffect(() => {
-        setInterval(() => {
-            changeText();
-        }, 64000);
-    }, [changeText, texts]);
-    return(
-        <PageWrapper>
-            <Background>
-            <Header />
-                <Content>
-                <Text size={80} italic animation={'upper'}> {growText}</Text>
-                </Content>
-            </Background>
-        </PageWrapper>
+    return (
+        <>
+            <PageWrapper>
+                <Background>
+                    <Header />
+                    <Container rows={4} cols={12}>
+                        <Title>Drinks Meister's</Title>
+                        <Paragraph>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Paragraph>
+                    </Container>
+                </Background>
+                <Container rows={4} cols={12}>
+                    <InternalTitle>Venha conhecer nosso menu</InternalTitle>
+                </Container>
+            </PageWrapper>
+        </>
     )
 }
 

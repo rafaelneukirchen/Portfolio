@@ -1,15 +1,31 @@
-import styled from 'styled-components';
-import tree from '../../images/tree.jpg';
+import styled, { keyframes } from 'styled-components';
+import restaurant from '../../images/restaurant.jpg';
+import ContainerComponent from '../../components/Container';
+
+//Animations
+const textAnim = keyframes`
+    from {
+        opacity: 0;
+        margin-bottom: -250px;
+    }
+
+    to {
+        opacity: 1;
+        margin-bottom: 0;
+    }
+`;
+
+export const Container = styled(ContainerComponent)`
+    margin-top: 120px;
+`;
 
 export const Background = styled.div`
-    background: url(${tree}) fixed center no-repeat;
+    background: url(${restaurant}) fixed center no-repeat;
+    background-size: cover;
     width: 100%;
-    height: 200vh;
-    position: relative;
-    z-index: -1;
-    position: relative;
+    height: 100vh;
+    position: relative;   
     &::before{
-        z-index: -1;
         content: '';
         top: 0;
         background: rgba(0,0,0,0.50) 100%;
@@ -19,14 +35,40 @@ export const Background = styled.div`
     }
 `;
 
-export const Content = styled.div`
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items:center;
-    height: calc(100vh - 100px);
-`
+export const Title = styled.h2`
+    font-size: 64px;
+    margin-left: 16px;
+    color: #fff;
+    border-bottom: 1px solid rgba(180,120,100,1);
+    grid-column: 1/6;
+    grid-row: 1/2;
+    z-index: 1;
+    transition: ${textAnim} 1s ease-out;
+    font-style: italic;
+    font-weight: 400;
+`;
 
-// Photo by <a href="https://unsplash.com/@s_tsuchiya?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">S. Tsuchiya</a> on <a href="https://unsplash.com/t/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+export const Paragraph = styled.p`
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+    margin-left: 16px;
+    color: #fff;
+    grid-column: 1/11;
+    grid-row: 3/5;
+    z-index: 1;
+    transition: ${textAnim} 1s ease-out;
+`;
+
+export const InternalTitle = styled.h3`
+    font-size: 36px;
+    margin-left: 16px;
+    color: #333;
+    border-bottom: 1px solid rgba(180,120,100,1);
+    grid-column: 1/6;
+    grid-row: 1/2;
+    z-index: 1;
+    transition: ${textAnim} 1s ease-out;
+    font-style: italic;
+    font-weight: 400;
+`;
